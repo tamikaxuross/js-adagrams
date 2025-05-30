@@ -41,6 +41,15 @@ const buildFrequencyMap = (letters) => {
 };
 
 export const usesAvailableLetters = (input, lettersInHand) => {
+  const handFreq = buildFrequencyMap(lettersInHand);
+  const word = input.toUpperCase();
+
+  for (const letter of word) {
+    if (!handFreq[letter]) return false;
+    handFreq[letter] -= 1;
+  }
+
+  return true;
   // Implement this method for wave 2
 };
 
