@@ -32,6 +32,14 @@ export const drawLetters = () => {
   
 };
 
+const buildFrequencyMap = (letters) => {
+  const map = {};
+  for (const letter of letters) {
+    map[letter] = (map[letter] || 0) + 1;
+  }
+  return map;
+};
+
 export const usesAvailableLetters = (input, lettersInHand) => {
   // Implement this method for wave 2
 };
